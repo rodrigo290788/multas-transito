@@ -1,8 +1,8 @@
-// src/components/LoadingSpinner.jsx
-import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
+import { useEffect, useState } from 'react';
 import { ProgressBar, Container, Row, Col } from 'react-bootstrap';
 
-const LoadingSpinner = ({ onLoadComplete }) => {
+export const LoadingBar = ({ onLoadComplete }) => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
@@ -22,35 +22,16 @@ const LoadingSpinner = ({ onLoadComplete }) => {
     };
   }, [onLoadComplete]);
 
-  const containerStyle = {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingTop:'30px',
-    
-  };
-
-  const colStyle = {
-    
-    width: '50vw', // Ajusta este valor según sea necesario
-    maxWidth: '240px', // Puedes establecer un máximo para evitar que sea demasiado ancho
-   
-  };
-
-  const progressBarStyle = {
-    backgroundColor: '#fff', // Color de la barra de progreso
-  };
-
   return (
     <Container fluid style={containerStyle}>
-      <Row className="w-100">
+      <Row className='w-100'>
         <Col xs={12} style={{ display: 'flex', justifyContent: 'center' }}>
           <div style={colStyle}>
-            <ProgressBar 
-              animated 
-              now={progress} 
-              label={`${progress}%`} 
-              variant="dark" 
+            <ProgressBar
+              animated
+              now={progress}
+              label={`${progress}%`}
+              variant='dark'
               style={progressBarStyle} // Estilo de la barra de progreso
             />
           </div>
@@ -59,4 +40,23 @@ const LoadingSpinner = ({ onLoadComplete }) => {
     </Container>
   );
 };
-export default LoadingSpinner;
+
+LoadingBar.propTypes = {
+  onLoadComplete: PropTypes.func,
+};
+
+const containerStyle = {
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  paddingTop: '30px',
+};
+
+const colStyle = {
+  width: '50vw', // Ajusta este valor según sea necesario
+  maxWidth: '240px', // Puedes establecer un máximo para evitar que sea demasiado ancho
+};
+
+const progressBarStyle = {
+  backgroundColor: '#fff', // Color de la barra de progreso
+};

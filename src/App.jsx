@@ -1,17 +1,15 @@
-// App.js
-import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './routes/Home';
-import Login from './routes/Login';
+
+import { DashboardPage } from './modules/dashboard/pages/DashboardPage';
+import { LoginPage } from './modules/auth/pages/LoginPage';
 
 const App = () => (
   <Router>
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/Login" element={<Login />} />
+      <Route path='/' element={<DashboardPage />} />
+      <Route path='/login' element={<LoginPage />} />
     </Routes>
   </Router>
 );
 
 export default App;
-
