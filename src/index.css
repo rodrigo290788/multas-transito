@@ -21,4 +21,16 @@ body {
   background-repeat: no-repeat; /* Evita que la imagen se repita */
   width: 100%; /* Asegura que el div ocupe el 100% del ancho del contenedor */
   height: 100vh; /* Ajusta la altura a la vista completa del navegador */
+  position: fixed;
+  z-index: -1;
+}
+.divNav {
+  height: 80px;
+}
+.colum {
+  max-width: 300px;
+}
+
+.infrac-column {
+  max-width: 300px;
 }
