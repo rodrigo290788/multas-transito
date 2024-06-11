@@ -2,17 +2,16 @@ import React from 'react'
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import {DataOffender} from './DataOffender';
+
 
 export function Offender() {
+
+    
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-
-    const [show1, setShow1] = useState(false);
-
-    const handleClose1 = () => setShow1(false);
-    const handleShow1 = () => setShow1(true);
     return (
         <div className='w-100 d-flex align-items-center mb-3'>
             <div className='rounded-circle me-2' style={{ width: '20px', height: '20px', backgroundColor: '#000' }}></div>
@@ -24,10 +23,11 @@ export function Offender() {
 
                 <Modal show={show} onHide={handleClose}>
                     <Modal.Header closeButton>
-                        <Modal.Title>Dominio: AB321DC</Modal.Title>
+                        <Modal.Title>Dominio: <span>AB321DC</span></Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <h3 className='text-center'><strong>Datos Vehiculo</strong></h3>
+                        <DataOffender/>
+                        {/* <h3 className='text-center'><strong>Datos Vehiculo</strong></h3>
                         <p className='mb-2'><strong>Vehiculo:</strong> <span>FIAT SIENA</span></p>
                         <p className='mb-2'><strong>Dominio:</strong> <span>AB321CD</span></p>
                         <p className='mb-2'><strong>Modelo:</strong> <span>2015</span></p>
@@ -70,7 +70,7 @@ export function Offender() {
 
                         <p className='mb-2'><strong>Ubicación de Falta:</strong> <span>EXODO Y GORRITI</span></p>
                         <p className='mb-2'><strong>Infracción:</strong> <span>ESTACIONAMIENTO DOBLE FILA</span></p>
-                        <p className='mb-2'><strong>Observaciones:</strong> <span>NO COLABORÓ CON LA DOCUMENTACIÓN</span></p>
+                        <p className='mb-2'><strong>Observaciones:</strong> <span>NO COLABORÓ CON LA DOCUMENTACIÓN</span></p> */}
                     </Modal.Body>
                     <Modal.Footer>
                         <Button variant="danger" onClick={handleClose}>
@@ -82,3 +82,4 @@ export function Offender() {
         </div>
     )
 }
+

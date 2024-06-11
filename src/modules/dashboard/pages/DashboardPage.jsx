@@ -4,7 +4,7 @@ import {FinesApproval} from '../components/FinesApproval';
 import { LoadingFullScreen } from '../../../components/LoadingFullScreen';
 import  { NavbarModule } from '../../../components/NavbarModule';
 
-export const DashboardPage = () => {
+export function DashboardPage() {
   const [loading, setLoading] = useState(true);
 
   const handleLoadComplete = () => {
