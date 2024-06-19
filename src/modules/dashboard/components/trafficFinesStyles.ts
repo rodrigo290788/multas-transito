@@ -28,14 +28,12 @@ const labelStyle = {
 };
 
 const labelStyle1 = {
-  // transform: 'scale(1.5)',
   display: 'block',
   minWidth: '180px',
   backgroundColor: '#fff', // Fondo blanco para el label
   padding: '5px',
   paddingLeft: '10px',
   borderRadius: '5px', // Agrega bordes redondeados
-  fontSize: '20px',
 };
 const contentCheck = {
   padding: '20px',

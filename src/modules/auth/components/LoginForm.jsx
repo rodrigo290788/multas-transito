@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form';
 export const LoginForm = () => {
   return (
     <Form>
-      <Form.Group className='mb-4' controlId='formBasicEmail'>
+      <Form.Group className='mb-4' controlId='formBasicText'>
         <Form.Control type='text' placeholder='Nombre de Usuario' />
       </Form.Group>
 
