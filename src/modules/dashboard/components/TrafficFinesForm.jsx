@@ -1,267 +1,11 @@
+import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import {
-  checkboxStyle,
-  checkboxStyle2,
-  content,
-  contentCheck,
-  labelStyle,
-  labelStyle1,
-} from './trafficFinesStyles';
-
-export function TrafficFinesForm() {
-  return (
-    <div className='d-flex  justify-content-center align-items-center mt-4'>
-      <div
-        className='d-flex flex-column justify-content-between align-items-center border rounded-4'
-         style={{marginTop:'80px', ...contentCheck}}>
-        <h2 className='text-white fw-bold mb-4'>ACTA DE INFRACCIÓN</h2>
-        <div className='w-100 d-flex justify-content-between align-items-center flex-wrap mb-4'>
-          <div className='w-100 infrac-column'>
-            <h3 className='text-white fw-bold m-0 mb-3' style={content}>
-              Datos Vehicular
-            </h3>
-            <Form.Group className='mb-3' controlId='formBasicPassword'>
-              <Form.Control
-                className='border border-0'
-                type='text'
-                placeholder='Vehiculo'
-              />
-            </Form.Group>
-            <div className='d-flex justify-content-between column-gap-3'>
-              <Form.Group className='mb-3' controlId='formBasicPassword'>
-                <Form.Control
-                  className='border border-0'
-                  type='text'
-                  placeholder='Modelo'
-                />
-              </Form.Group>
-              <Form.Group className='mb-3' controlId='formBasicPassword'>
-                <Form.Control
-                  className='border border-0'
-                  type='text'
-                  placeholder='Dominio'
-                />
-              </Form.Group>
-            </div>
-
-            <Form.Group className='mb-3' controlId='formBasicPassword'>
-              <Form.Control
-                className='border border-0'
-                type='text'
-                placeholder='Radicado'
-              />
-            </Form.Group>
-
-
-            <div className='w-100 infrac-column'>
-              <h3 className='text-white fw-bold m-0 mb-3' style={content}>
-                Datos Propietario
-              </h3>
-              <div className='d-flex justify-content-between column-gap-3'>
-                <Form.Group className='mb-3' controlId='formBasicPassword'>
-                  <Form.Control
-                    className='border border-0'
-                    type='text'
-                    placeholder='Nombre y Apellido'
-                  />
-                </Form.Group>
-                <Form.Group className='mb-3' controlId='formBasicPassword'>
-                  <Form.Control
-                    className='border border-0'
-                    type='text'
-                    placeholder='telefono'
-                  />
-                </Form.Group>
-              </div>
-              <div className='d-flex justify-content-between column-gap-3'>
-                <Form.Group className='mb-3' controlId='formBasicPassword'>
-                  <Form.Control
-                    className='border border-0'
-                    type='text'
-                    placeholder='D.N.I'
-                  />
-                </Form.Group>
-                <Form.Group className='mb-3' controlId='formBasicPassword'>
-                  <Form.Control
-                    className='border border-0'
-                    type='text'
-                    placeholder='Domicilio'
-                  />
-                </Form.Group>
-              </div>
-
-              <div className='d-flex justify-content-between column-gap-3'>
-                <Form.Group className='mb-3' controlId='formBasicPassword'>
-                  <Form.Control
-                    className='border border-0'
-                    type='text'
-                    placeholder='Localidad'
-                  />
-                </Form.Group>
-                <Form.Group className="mb-3">
-                  <Form.Select>
-                    <option>Provincia</option>
-                    {sortedProvinces.map((province, index) => (
-                      <option key={index} value={province}>{province}</option>
-                    ))}
-                  </Form.Select>
-                </Form.Group>
-              </div>
-            </div>
-            <div className='w-100 infrac-column'>
-              <h3 className='text-white fw-bold m-0 mb-3' style={content}>
-                Datos Conductor
-              </h3>
-              <Form.Group className='mb-3' controlId='formBasicPassword'>
-                <Form.Control
-                  className='border border-0'
-                  type='text'
-                  placeholder='Nombre y Apellido'
-                />
-              </Form.Group>
-              <div className='d-flex justify-content-between column-gap-3'>
-                <Form.Group className='mb-3' controlId='formBasicPassword'>
-                  <Form.Control
-                    className='border border-0'
-                    type='text'
-                    placeholder='D.N.I'
-                  />
-                </Form.Group>
-                <Form.Group className='mb-3' controlId='formBasicPassword'>
-                  <Form.Control
-                    className='border border-0'
-                    type='text'
-                    placeholder='Domicilio'
-                  />
-                </Form.Group>
-              </div>
-
-              <div className='d-flex justify-content-between column-gap-3'>
-                <Form.Group className='mb-3' controlId='formBasicPassword'>
-                  <Form.Control
-                    className='border border-0'
-                    type='text'
-                    placeholder='Localidad'
-                  />
-                </Form.Group>
-                <Form.Group className="mb-3">
-                  <Form.Select>
-                    <option>Provincia</option>
-                    {sortedProvinces.map((province, index) => (
-                      <option key={index} value={province}>{province}</option>
-                    ))}
-                  </Form.Select>
-                </Form.Group>
-              </div>
-            </div>
-          </div>
-
-          <div className='w-100 infrac-column'>
-            <h3 className='text-white fw-bold m-0 mb-3' style={content}>
-              Infracción
-            </h3>
-            <Form.Group className='mb-3' controlId='formBasicPassword'>
-                <Form.Control
-                  className='border border-0'
-                  type='text'
-                  placeholder='Lugar de la Infracción'
-                />
-              </Form.Group>
-
-            <Form.Group className="mb-4">
-              <Form.Label className='text-white fw-bold'>Tomar una Foto</Form.Label>
-              <Form.Control type="file" accept="image/*" capture="environment" />
-            </Form.Group>
-            <Form.Group
-              className='colum mb-3'
-              style={labelStyle}
-              controlId='option1'>
-              <Form.Check
-                className='w-100 p-0 d-flex flex-row-reverse justify-content-between align-items-center'
-                type='checkbox'
-                label={<span>Option 1</span>}
-                style={checkboxStyle}
-              />
-            </Form.Group>
-
-            <Form.Group
-              className='colum mb-3'
-              style={labelStyle}
-              controlId='option2'>
-              <Form.Check
-                className=' w-100 p-0 d-flex flex-row-reverse justify-content-between align-items-center'
-                type='checkbox'
-                label={<span>Option 2</span>}
-              />
-            </Form.Group>
-
-            <Form.Group
-              className='colum mb-3'
-              style={labelStyle}
-              controlId='option3'>
-              <Form.Check
-                className=' w-100 p-0 d-flex flex-row-reverse justify-content-between align-items-center'
-                type='checkbox'
-                label={<span>Option 3</span>}
-                style={checkboxStyle}
-              />
-            </Form.Group>
-
-            <Form.Group
-              className='colum mb-3'
-              style={labelStyle}
-              controlId='option4'>
-              <Form.Check
-                className=' w-100 p-0 d-flex flex-row-reverse justify-content-between align-items-center'
-                type='checkbox'
-                label={<span>Option 4</span>}
-                style={checkboxStyle}
-              />
-            </Form.Group>
-
-            <Form.Group
-              className='colum mb-3'
-              style={labelStyle}
-              controlId='option5'>
-              <Form.Check
-                className=' w-100 p-0 d-flex flex-row-reverse justify-content-between align-items-center'
-                type='checkbox'
-                label={<span>Option 5</span>}
-                style={checkboxStyle}
-              />
-            </Form.Group>
-
-            <Form.Group
-              className='mb-3 pe-1 d-flex align-items-center'
-              controlId='formBasicCheckbox'
-              style={labelStyle1}>
-              <Form.Group className='' controlId='formBasicPassword'>
-                <Form.Control
-                  className='w-100 border border-0'
-                  type='text'
-                  placeholder='Otras'
-                />
-              </Form.Group>
-              <Form.Check
-                className='w-100'
-                type='checkbox'
-                style={checkboxStyle2}
-              />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-              <Form.Control as="textarea" rows={3} placeholder='Observaciones' />
-            </Form.Group>
-          </div>
-        </div>
-
-        <Button variant='danger w-75 colum' type='submit'>
-          CARGAR FALTA
-        </Button>
-      </div>
-    </div>
-  );
-}
+import VehicularDataForm from './VehicularDataForm';
+import OwnerDataForm from './OwnerDataForm';
+import OffenderDataForm from './OffenderDataForm';
+import TrafficViolationForm from './TrafficViolationForm';
+import { contentCheck } from './trafficFinesStyles';
 
 const provinces = [
   "Buenos Aires",
@@ -290,3 +34,111 @@ const provinces = [
 ];
 
 const sortedProvinces = ["Jujuy", ...provinces.filter(province => province !== "Jujuy").sort()];
+
+export function TrafficFinesForm({ onNext }) {
+  const [formData, setFormData] = useState({});
+  const [file, setFile] = useState(null);
+
+  const handleChange = (e) => {
+    const { id, value, type, checked, files } = e.target;
+    if (type === 'checkbox') {
+      setFormData({
+        ...formData,
+        [id]: checked
+      });
+    } else if (type === 'file') {
+      setFile(files[0]);
+    } else {
+      setFormData({
+        ...formData,
+        [id]: value.toUpperCase()
+      });
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const formattedData = formatData(formData);
+    await saveToIndexedDB(formattedData);
+    console.log('Data saved to IndexedDB:', formattedData);
+    onNext(); // Llama a la función onNext aquí
+  };
+
+  const formatData = (data) => [
+    { type: 'header', content: 'Datos Vehiculo' },
+    { type: 'paragraph', label: 'Vehículo', value: data.vehiculo || '' },
+    { type: 'paragraph', label: 'Modelo', value: data.modelo || '' },
+    { type: 'paragraph', label: 'Dominio', value: data.dominio || '' },
+    { type: 'paragraph', label: 'Radicado', value: data.radicado || '' },
+    { type: 'header', content: 'Datos Propietario' },
+    { type: 'paragraph', label: 'Nombre', value: data.propietarioNombre || '' },
+    { type: 'paragraph', label: 'Teléfono', value: data.propietarioTelefono || '' },
+    { type: 'paragraph', label: 'D.N.I', value: data.propietarioDNI || '' },
+    { type: 'paragraph', label: 'Domicilio', value: data.propietarioDomicilio || '' },
+    { type: 'paragraph', label: 'Localidad', value: data.propietarioLocalidad || '' },
+    { type: 'paragraph', label: 'Provincia', value: data.propietarioProvincia || '' },
+    { type: 'header', content: 'Datos Conductor' },
+    { type: 'paragraph', label: 'Nombre', value: data.conductorNombre || '' },
+    { type: 'paragraph', label: 'D.N.I', value: data.conductorDNI || '' },
+    { type: 'paragraph', label: 'Domicilio', value: data.conductorDomicilio || '' },
+    { type: 'paragraph', label: 'Localidad', value: data.conductorLocalidad || '' },
+    { type: 'paragraph', label: 'Provincia', value: data.conductorProvincia || '' },
+    { type: 'header', content: 'Infracción' },
+    { type: 'paragraph', label: 'Lugar de la Infracción', value: formData.lugarInfraccion || '' },
+    ...(file ? [{ type: 'button', label: 'Foto de Infracción', modalTitle: 'FOTO DE INFRACCIÓN', imgUrl: URL.createObjectURL(file) }] : []),
+    ...(formData.option1 ? [{ type: 'paragraph', label: 'Infracción', value: 'Option 1' }] : []),
+    ...(formData.option2 ? [{ type: 'paragraph', label: 'Infracción', value: 'Option 2' }] : []),
+    ...(formData.option3 ? [{ type: 'paragraph', label: 'Infracción', value: 'Option 3' }] : []),
+    ...(formData.option4 ? [{ type: 'paragraph', label: 'Infracción', value: 'Option 4' }] : []),
+    ...(formData.option5 ? [{ type: 'paragraph', label: 'Infracción', value: 'Option 5' }] : []),
+    ...(formData.otras ? [{ type: 'paragraph', label: 'Otras Infracciones', value: formData.otrasInfraccion || '' }] : []),
+    { type: 'paragraph', label: 'Observaciones', value: data.observaciones || '' }
+  ];
+
+  const saveToIndexedDB = async (data) => {
+    const dbPromise = indexedDB.open('TrafficFinesDB', 1);
+
+    dbPromise.onupgradeneeded = () => {
+      const db = dbPromise.result;
+      db.createObjectStore('fines', { keyPath: 'id', autoIncrement: true });
+    };
+
+    dbPromise.onsuccess = () => {
+      const db = dbPromise.result;
+      const tx = db.transaction('fines', 'readwrite');
+      const store = tx.objectStore('fines');
+      store.add(data);
+      tx.oncomplete = () => {
+        db.close();
+      };
+    };
+
+    dbPromise.onerror = (event) => {
+      console.error('Database error:', event.target.errorCode);
+    };
+  };
+
+  return (
+    <div className='d-flex justify-content-center align-items-center mt-4'>
+      <div className='d-flex flex-column justify-content-between align-items-center border rounded-4' style={{ marginTop: '80px', maxWidth:'730px', ...contentCheck }}>
+        <h2 className='text-white fw-bold mb-4'>ACTA DE INFRACCIÓN</h2>
+        <Form onSubmit={handleSubmit}>
+          <div className='w-100 d-flex justify-content-between align-items-start flex-wrap column-gap-5 mb-4 align-items-stretch'>
+            <div className='d-flex flex-column justify-content-between flex-grow-1'>
+              <VehicularDataForm handleChange={handleChange} />
+              <OwnerDataForm handleChange={handleChange} sortedProvinces={sortedProvinces} />
+              <OffenderDataForm handleChange={handleChange} sortedProvinces={sortedProvinces} />
+            </div>
+            <TrafficViolationForm handleChange={handleChange} />
+          </div>
+
+          <div className='w-100 d-flex justify-content-center align-items-center'>
+          <Button variant='danger w-100 colum' type='submit'>
+            CARGAR FALTA
+          </Button>
+          </div>
+        </Form>
+      </div>
+    </div>
+  );
+}
